@@ -7,7 +7,16 @@ import os
 
 os_name = os.name
 
+def startFunction():
+    print("To be Written")
+
+
+def exitFunction():
+    win.destroy()
+    exit()
+
 def window():
+    global win
     win = tk.Tk()
     win.title("Attendance Keeper")
     win.geometry("300x300+200+200")
@@ -19,10 +28,10 @@ def window():
     heading = tk.Label(win_canvas, text='Attendance Keeper', bg='#011C27', fg='orange',  font=('helvetica', 20, 'underline bold'))
     win_canvas.create_window(150, 30, window = heading)
 
-    start_button = tk.Button(win_canvas, text='Start', bg='lightgreen', padx=20, font=('', 14))
+    start_button = tk.Button(win_canvas, text='Start', bg='lightgreen', padx=20, font=('', 14), command = startFunction)
     win_canvas.create_window(150, 120, window = start_button)
 
-    exit_button = tk.Button(win_canvas, text='Exit', bg='red', padx=20, font=('', 14))
+    exit_button = tk.Button(win_canvas, text='Exit', bg='red', padx=20, font=('', 14), command = exitFunction)
     win_canvas.create_window(150, 200, window = exit_button)
 
     win.mainloop()
